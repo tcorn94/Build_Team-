@@ -1,4 +1,4 @@
-// const Employee = require("./lib/Employee");
+const Employee = require("./lib/Employee");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
@@ -9,6 +9,7 @@ const engineerCard = require("./htmlRender/engineerCard");
 const internCard = require("./htmlRender/internCard");
 const managerCard = require("./htmlRender/managerCard");
 const mainRender = require("./htmlRender/mainRender");
+
 
 
 const outputPath = path.resolve(__dirname, "output", "team.html");
@@ -35,9 +36,9 @@ function mainApp() {
         ])
         .then(answers =>{
             const {managerName, managerId, managerEmail, managerNumber} = answers
-            const manangerObj = new Manager (managerName, managerId, managerEmail, managerNumber)
+            const manangerObj = new Manager.Manager (managerName, managerId, managerEmail, managerNumber)
 
-            const managerCardHtml = managerCard(manangerObj)
+            const managerCardHtml = managerCard.managerCard(manangerObj)
 
             teamMember.push(managerCardHtml)
             createTeam();
@@ -52,7 +53,7 @@ function createTeam(){
             {type: "list",
             name: "addMember",
             message: "Which team member would you like to add?",
-            choices: ["Engineer", "Intern"]
+            choices: ["Engineer", "Intern", "No more members"]
 
 
     }
@@ -61,8 +62,8 @@ function createTeam(){
         ])
         .then(answers => {
             // create a switch statement to choose between engineer, intern, or build team
-            const {addMember} = answers
-            switch (answers) {
+          
+            switch (answers.addMember) {
               case "Engineer":
                 getEngineer();
                 break;
@@ -97,9 +98,9 @@ function getEngineer() {
         ])
         .then(answers =>{
             const {engineerName, engineerId, engineerEmail, engineerNumber} = answers
-            const engineerObj = new Engineer (engineerName, engineerId, engineerEmail, engineerNumber)
+            const engineerObj = new Engineer.Engineer (engineerName, engineerId, engineerEmail, engineerNumber)
 
-            const engineerCardHtml = engineerCard(engineerObj)
+            const engineerCardHtml = engineerCard.engineerCard(engineerObj)
 
             teamMember.push(engineerCardHtml)
             createTeam()
@@ -129,9 +130,9 @@ function getIntern() {
         ])
         .then(answers =>{
             const {internName, internId, internEmail, internNumber} = answers
-            const internObj = new Intern (internName, internId, internEmail, internNumber)
+            const internObj = new Intern.Intern (internName, internId, internEmail, internNumber)
 
-            const internCardHtml = internCard(internObj)
+            const internCardHtml = internCard.internCard(internObj)
 
             teamMember.push(internCardHtml)
             createTeam()
@@ -141,7 +142,7 @@ function getIntern() {
 }
 
 function buildTeam() {
-fs.writeFileSync(outputPath, mainRender(teamMember), "utf-8");
+fs.writeFileSync(outputPath, mainRender.mainRender(teamMember), "utf-8");
 }
 
 mainApp()

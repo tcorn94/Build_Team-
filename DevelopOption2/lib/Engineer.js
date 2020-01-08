@@ -1,9 +1,9 @@
 // require Employee class
-const Employee = require("./Employee")
+const EmployeeModule = require("./Employee")
 
 
 // create a class called Engineer that extends Employee
-class Engineer extends Employee{
+class Engineer extends EmployeeModule.Employee{
     constructor(name, id, email, officeNumber){
         super(name,id, email);
         this.officeNumber = officeNumber;
@@ -16,4 +16,4 @@ class Engineer extends Employee{
     };
     }
 // export employee
-module.exports
+module.exports.Engineer = Engineer

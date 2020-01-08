@@ -18,4 +18,4 @@ function managerCard(data){
 
 }
 // export managerCard
-module.exports
+module.exports.managerCard = managerCard

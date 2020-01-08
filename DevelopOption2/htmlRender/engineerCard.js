@@ -18,4 +18,4 @@ function engineerCard(data){
 }
 
 // export the engineer card
-module.exports
+module.exports.engineerCard = engineerCard

@@ -1,7 +1,4 @@
 
-// create a function that holds the html that will output the main body of the html and will take in the data from the other cards
-function mainRender(data){
-    return `
    
     <!DOCTYPE html>
     <html lang="en">
@@ -22,14 +19,34 @@ function mainRender(data){
       </div>
     </div>
 
-    ${data}
+    
+  
+    <div class="card" style="width: 18rem;">
+  <img src="https://www.st-andrews.ac.uk/dpl/1.5.0/assets/docs/images/placeholders/200x200.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"> mark</h5>
+    <p class="card-text">Role: Manager.</p>
+    <p class="card-text"> ID#: 8848.</p>
+    <p class="card-text">  Email: jdhgd.</p>
+  
+  </div>
+</div>
+    
+    ,
+    <div class="card" style="width: 18rem;">
+    <img src="https://www.st-andrews.ac.uk/dpl/1.5.0/assets/docs/images/placeholders/200x200.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title"> jjgkke</h5>
+      <p class="card-text">Role: Intern.</p>
+      <p class="card-text"> ID#: 9383.</p>
+      <p class="card-text">  Email: jdhne.</p>
+    
+    </div>
+  </div>
+
 
         <script src="js/scripts.js"></script>
       </body>
     </html>
 
    
-`
-}
-// export mainRender
-module.exports.mainRender = mainRender
