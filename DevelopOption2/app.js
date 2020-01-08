@@ -49,6 +49,13 @@ function createTeam(){
 
     inquirer
         .prompt([
+            {type: "list",
+            name: "addMember",
+            message: "Which team member would you like to add?",
+            choices: ["Engineer", "Intern"]
+
+
+    }
           
             
         ])
@@ -78,6 +85,13 @@ function getEngineer() {
             
         ])
         .then(answers =>{
+            const {engineerName, engineerId, engineerEmail, engineerNumber} = answers
+            const engineerObj = new Engineer (engineerName, engineerId, engineerEmail, engineerNumber)
+
+            const engineerCardHtml = engineerCard(engineerObj)
+
+            teamMember.push(engineerCardHtml)
+            createTeam()
            
         })
 
@@ -103,6 +117,13 @@ function getIntern() {
 
         ])
         .then(answers =>{
+            const {internName, internId, internEmail, internNumber} = answers
+            const internObj = new Intern (internName, internId, internEmail, internNumber)
+
+            const internCardHtml = internCard(internObj)
+
+            teamMember.push(internCardHtml)
+            createTeam()
           
         })
 
