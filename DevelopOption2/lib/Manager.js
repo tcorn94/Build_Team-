@@ -12,8 +12,9 @@ getofficeNumber(){
     return this.officeNumber
 };
 getRole(){
-    return "Manager";
+    return "Intern";
 };
 }
 
 // export manager
+module.exports

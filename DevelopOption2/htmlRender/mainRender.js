@@ -29,3 +29,4 @@ function mainRender(data){
 `
 }
 // export mainRender
+module.exports

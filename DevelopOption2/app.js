@@ -61,7 +61,18 @@ function createTeam(){
         ])
         .then(answers => {
             // create a switch statement to choose between engineer, intern, or build team
-           
+            const {addMember} = answers
+            switch (answers) {
+              case "Engineer":
+                getEngineer();
+                break;
+              case "Intern":
+                getIntern();
+                // expected output: "Mangoes and papayas are $2.79 a pound."
+                break;
+              default:
+               buildTeam();
+            }
         })
 }
 
