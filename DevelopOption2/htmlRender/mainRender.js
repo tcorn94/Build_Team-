@@ -21,8 +21,15 @@ function mainRender(data){
         <p class="lead">A list of your teammates and their contact info.</p>
       </div>
     </div>
-
-    ${data}
+    <div class="container">
+    <div class="row">
+  
+      ${data}
+    
+     
+    </div>
+    </div>
+    
 
         <script src="js/scripts.js"></script>
       </body>
